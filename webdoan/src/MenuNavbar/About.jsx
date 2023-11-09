@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
-import "../MenuNavbar/about.scss"    
+import "../MenuNavbar/about.scss"  
+import Footer from "../pages/Footer/Footer";
 
 const About = () => {
 
@@ -9,7 +10,7 @@ const About = () => {
     }
     return (
         <Fragment>
-           <section className="about">
+           <section className="about" style={{backgroundColor:'#e5f1fc'}}>
                 <div className="row">
                     <div className="column">
                         <div className="about-img"></div>
@@ -121,7 +122,11 @@ const About = () => {
 
                     </div>
                 </div>
+                
            </section>
+           <div>
+                    <Footer/>
+                </div>
         </Fragment>
     )
 }

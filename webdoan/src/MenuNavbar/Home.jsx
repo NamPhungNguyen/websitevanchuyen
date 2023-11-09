@@ -7,6 +7,7 @@ import {BsPinMapFill} from 'react-icons/bs';
 import {BsBoxSeamFill} from 'react-icons/bs'
 import {FaTruck} from 'react-icons/fa'
 import {AiOutlineFieldTime} from 'react-icons/ai'
+import Footer from "../pages/Footer/Footer";
 import './home.scss'
 const Home = () => {
     return (
@@ -46,10 +47,14 @@ const Home = () => {
             </div>
 
 
-            <div id="container" style={{ background: '#efefef', padding: '0 120px' }}>
+            <div id="container" style={{ background: 'rgb(230 247 255)', padding: '0 120px' }}>
                 <div style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '20px' }}>
                     <OrderCard />
                 </div>
+            </div>
+
+            <div>
+                <Footer/>
             </div>
         </React.Fragment>
     )
