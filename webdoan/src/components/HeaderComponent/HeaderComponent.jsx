@@ -26,7 +26,7 @@ const Navbar = () => {
         setIsMobile(!isMobile);
     }
 
-    
+
 
     return (
         showNavbar && (
@@ -68,7 +68,7 @@ const Navbar = () => {
                         <li>Liên hệ</li>
                     </Link>
 
-                    <div>
+                    <div className='btn-login'>
                         <Link to='/login'>
                             <button className="delivery-button">Đăng nhập</button>
                         </Link>
