@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ordercard.scss'; // Import tệp SCSS
+import './ordercard.scss'; 
 
 const OrderCard = () => {
     const [orders, setOrders] = useState([]); // Sử dụng useState để lưu trữ dữ liệu từ API

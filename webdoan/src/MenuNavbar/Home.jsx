@@ -9,6 +9,7 @@ import {FaTruck} from 'react-icons/fa'
 import {AiOutlineFieldTime} from 'react-icons/ai'
 import Footer from "../pages/Footer/Footer";
 import './home.scss'
+import CardComponent from "../components/CardComponent/CardComponent";
 const Home = () => {
     return (
         <React.Fragment>
@@ -47,10 +48,18 @@ const Home = () => {
             </div>
 
 
-            <div id="container" style={{ background: 'rgb(230 247 255)', padding: '0 120px' }}>
+            <div id="container" style={{ background: 'rgb(230 247 255)', padding: '0 120px', height:'1000px' }}>
                 <div style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '20px' }}>
-                    <OrderCard />
+                    <CardComponent/>
+                    <CardComponent/>
+                    <CardComponent/>
+                    <CardComponent/>
+                    <CardComponent/>
+                    <CardComponent/>
+                    <CardComponent/>
+                    
                 </div>
+
             </div>
 
             <div>
