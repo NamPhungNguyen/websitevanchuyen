@@ -6,11 +6,10 @@ import RegisterDriver from "../MenuNavbar/RegisterDriver";
 import Services from "../MenuNavbar/Services";
 import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
-import HomePage from "../pages/HomePage/HomePage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
-import OrderPage from "../pages/OrderPage/OrderPage";
-import ProductsPage from "../pages/ProductsPage/ProductsPage";
 import AdminLayout from '../components/auth_admin/AdminLayout'
+import ProductDetailsPage from "../pages/ProductDetailsPage/ProductDetailsPage";
+import ProductDetailsComponent from "../pages/ProductDetailsComponent/ProductDetailsComponent";
 
  export const routes = [
     {
@@ -67,6 +66,12 @@ import AdminLayout from '../components/auth_admin/AdminLayout'
         isShowHeader: false
     },
 
+    
+    {
+        path: '/product-details',
+        page: ProductDetailsComponent,
+        isShowHeader: true
+    },
     
 
     {
