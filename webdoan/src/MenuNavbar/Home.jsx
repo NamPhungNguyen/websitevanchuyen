@@ -10,6 +10,7 @@ import {AiOutlineFieldTime} from 'react-icons/ai'
 import Footer from "../pages/Footer/Footer";
 import './home.scss'
 import CardComponent from "../components/CardComponent/CardComponent";
+import ButtonComponent from '../components/ButtonComponent/ButtonComponent'
 const Home = () => {
     return (
         <React.Fragment>
@@ -59,7 +60,7 @@ const Home = () => {
                     <CardComponent/>
                     
                 </div>
-
+                <ButtonComponent textButton="Xem thêm" type="ouline"/>
             </div>
 
             <div>
