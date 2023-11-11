@@ -1,15 +1,14 @@
 import { Col, Row, Image } from 'antd';
 import React from 'react';
 import imageProduct from '../../assets/images/anh_home.jpg'
+import ProductDetailsComponent from '../ProductDetailsComponent/ProductDetailsComponent';
 const ProductDetailsPage = () => {
     return (
-        <Row>
-            <Col span={10}>
-                <Image src={imageProduct} alt="image product" preview='false'/>
-                
-            </Col>
-            <Col span={14}>col-12</Col>
-        </Row>
+        <div style={{ padding: '0 120px', background: '#efefef' }}>
+            <h5>Trang chủ</h5>
+                <ProductDetailsComponent />
+        </div>
+
     );
 }
 

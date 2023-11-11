@@ -40,5 +40,13 @@ export const WrapperPriceAddressProduct = styled.h1`
         white-space:nowrap;
         overflow:hidden;
         text-overflow:ellipsisl;
+    },
+    span.change-address {
+        color: rgb(11, 116, 229);
+        font-size:16px;
+        line-height:24px;
+        font-weight:500;
     }
+
 `
+

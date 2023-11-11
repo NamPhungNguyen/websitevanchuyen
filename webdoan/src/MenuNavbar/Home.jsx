@@ -51,29 +51,28 @@ const Home = () => {
                 </div>
             </div>
 
-
-            <div id="container" style={{ background: 'rgb(230 247 255)', padding: '0 120px', height: '1000px', width:'100%' }}>
-                <WrapperProducts>
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-
-                </WrapperProducts>
-                <div style={{width:'100%',  display:'flex', justifyContent:'center', alignItems:'center', marginTop:'10px'}}>
-                    <ButtonComponent className="btn_AddView" textButton="Xem thêm" styleButton={{
-                        border: '1px solid rgb(11, 116, 229)', color: 'rgb(11,116,229)',
-                        width: '240px', height: '38px', borderRadius: '4px'
-                    }}
-                        styleTextButton={{ fontWeight: 500 }} />
+            <div className="body" style={{ width: '100%', backgroundColor: '#efefef' }}>
+                <div id="container" style={{  height: '1000px', width: '1270px', margin: '0 auto' }}>
+                    <WrapperProducts>
+                        <CardComponent />
+                        <CardComponent />
+                        <CardComponent />
+                        <CardComponent />
+                        <CardComponent />
+                        <CardComponent />
+                        <CardComponent />
+                        <CardComponent />
+                        <CardComponent />
+                        <CardComponent />
+                    </WrapperProducts>
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px' }}>
+                        <ButtonComponent className="btn_AddView" textButton="Xem thêm" styleButton={{
+                            border: '1px solid rgb(11, 116, 229)', color: 'rgb(11,116,229)',
+                            width: '240px', height: '38px', borderRadius: '4px'
+                        }}
+                            styleTextButton={{ fontWeight: 500 }} />
+                    </div>
                 </div>
-
             </div>
 
             <div>

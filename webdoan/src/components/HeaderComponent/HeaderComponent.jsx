@@ -6,7 +6,7 @@ import { FaBars } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { FaShippingFast } from 'react-icons/fa';
 import { BiChevronDown } from 'react-icons/bi';
-
+import { useSelector } from 'react-redux';
 const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
     const location = useLocation();
@@ -14,6 +14,7 @@ const Navbar = () => {
     //Sử dụng state để kiểm soát hiển thị của Navbar
     const [showNavbar, setShowNavbar] = useState(true);
 
+    const username = useSelector((state) => state.auth.username);
     useEffect(() => {
         if (isOnAdminPage) {
             setShowNavbar(false); //Ẩn Navbar nếu là trang admin
@@ -25,8 +26,6 @@ const Navbar = () => {
     const toggleMobileMenu = () => {
         setIsMobile(!isMobile);
     }
-
-
 
     return (
         showNavbar && (
@@ -69,9 +68,13 @@ const Navbar = () => {
                     </Link>
 
                     <div className='btn-login'>
-                        <Link to='/login'>
-                            <button className="delivery-button">Đăng nhập</button>
-                        </Link>
+                        {username ? (
+                            <p>Chào mừng, {username}!</p>
+                        ) : (
+                            <Link to='/login'>
+                                <button className="delivery-button">Đăng nhập</button>
+                            </Link>
+                        )}
                     </div>
 
                 </div>

@@ -6,6 +6,8 @@ import { FaEye } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Sử dụng useNavigate thay cho useHistory
+import { useDispatch } from 'react-redux';
+import { setUsername } from '../../redux/slides/authActions';
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -13,7 +15,7 @@ const Login = () => {
     const [isShowPassword, setIsShowPassword] = useState(false);
     const [roleId, setRoleId] = useState(0); // Khởi tạo roleId là 1
     const navigate = useNavigate(); // Sử dụng useNavigate để thực hiện chuyển hướng
-    const [username, setUsername] = useState('');
+    const dispatch = useDispatch();
 
     const loginApi = (email, password) => {
         return axios.post("https://localhost:7156/api/Login", { email, password });
@@ -24,17 +26,18 @@ const Login = () => {
             toast.error("Email/Password là bắt buộc");
             return;
         }
-
         // Thực hiện đăng nhập và lấy username từ API
         try {
             const res = await loginApi(email, password);
 
             if (res.data && res.data.username) {
-                // Cập nhật state username
+                //Cập nhật state username
+                // const username = res.data.username;
+                // setUsername(res.data.username);
+                // console.log(username);
+                localStorage.setItem('token', res.data.token);
                 const username = res.data.username;
-                setUsername(res.data.username);
-                console.log(username);
-
+                dispatch(setUsername(username));
                 // Điều hướng dựa trên roleId
                 if (res.data.roleId === 1) {
                     navigate('/admin'); // Sử dụng navigate để chuyển hướng
@@ -56,6 +59,8 @@ const Login = () => {
             console.error("Đăng nhập thất bại: ", error);
         }
     };
+
+
 
     return (
         <>

@@ -45,7 +45,7 @@ import ProductDetailsComponent from "../pages/ProductDetailsComponent/ProductDet
     {
         path: '/login',
         page: Login,
-        isShowHeader: true
+        isShowHeader: false
     },
 
     {
@@ -69,7 +69,7 @@ import ProductDetailsComponent from "../pages/ProductDetailsComponent/ProductDet
     
     {
         path: '/product-details',
-        page: ProductDetailsComponent,
+        page: ProductDetailsPage,
         isShowHeader: true
     },
     
