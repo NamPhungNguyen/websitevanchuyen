@@ -12,6 +12,7 @@ import ProductDetailsPage from "../pages/ProductDetailsPage/ProductDetailsPage";
 import ProductDetailsComponent from "../pages/ProductDetailsComponent/ProductDetailsComponent";
 import RegisterUser from "../components/auth/RegisterUser";
 import RegisterBusiness from "../components/auth/RegisterBussiness";
+import ProfilePage from "../pages/Profile/ProfilePage";
 
  export const routes = [
     {
@@ -81,6 +82,13 @@ import RegisterBusiness from "../components/auth/RegisterBussiness";
         page: ProductDetailsPage,
         isShowHeader: true
     },
+
+    {
+        path: '/profile-user',
+        page: ProfilePage,
+        isShowHeader: true
+    },
+    
     
 
     {
