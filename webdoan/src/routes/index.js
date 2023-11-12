@@ -10,6 +10,8 @@ import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import AdminLayout from '../components/auth_admin/AdminLayout'
 import ProductDetailsPage from "../pages/ProductDetailsPage/ProductDetailsPage";
 import ProductDetailsComponent from "../pages/ProductDetailsComponent/ProductDetailsComponent";
+import RegisterUser from "../components/auth/RegisterUser";
+import RegisterBusiness from "../components/auth/RegisterBussiness";
 
  export const routes = [
     {
@@ -55,10 +57,17 @@ import ProductDetailsComponent from "../pages/ProductDetailsComponent/ProductDet
     },
 
     {
+        path: '/register',
+        page: Register,
+        isShowHeader: true
+    },
+
+    {
         path: '/driver-registration',
         page: RegisterDriver,
         isShowHeader: true
     },
+
 
     {
         path: '/admin',

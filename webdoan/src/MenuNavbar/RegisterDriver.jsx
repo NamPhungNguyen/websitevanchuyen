@@ -72,7 +72,7 @@ const RegisterDriver = () => {
 
     return (
         <div>
-            <h1>Đăng ký tài xế</h1>
+            <h1 style={{textAlign:'center', paddingTop:'20px', fontSize:'30px'}}>Đăng ký tài xế</h1>
             <form className="form-registerdriver" onSubmit={handleRegisterDriver}>
                 <div>
                     <label htmlFor="fullName">Họ và Tên</label>

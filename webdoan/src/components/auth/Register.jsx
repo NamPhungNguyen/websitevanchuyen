@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './register.scss';
-import RegisterUser from './RegisterUser';
-import RegisterBusiness from "./RegisterBussiness";
+import RegisterUser from '../auth/RegisterUser';
+import RegisterBusiness from "../auth/RegisterBussiness";
 
 const Register = () => {
     const [currentTab, setCurrentTab] = useState(1);
@@ -19,6 +19,7 @@ const Register = () => {
     ];
 
     const handleTabClick = (tabId) => {
+        console.log("Current Tab: ", tabId);
         setCurrentTab(tabId);
 
         if (tabId === 1) {
@@ -43,11 +44,8 @@ const Register = () => {
                 )}
             </div>
             <div className="content">
-                {currentTab === 1 ? (
-                    <RegisterUser />
-                ) : (
-                    <RegisterBusiness />
-                )}
+                {currentTab === 1 ? <RegisterUser /> : <RegisterBusiness />}
+
             </div>
         </div>
     )
