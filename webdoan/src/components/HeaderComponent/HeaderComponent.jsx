@@ -29,6 +29,7 @@ const Navbar = () => {
         toast.success("Đăng xuất thành công");
         //gọi login của redux để đăng xuất
         dispatch(logout());
+        localStorage.removeItem('username');
     }
 
     const content = (

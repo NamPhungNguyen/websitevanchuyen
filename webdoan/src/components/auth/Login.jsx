@@ -5,7 +5,7 @@ import { FaEyeSlash } from 'react-icons/fa';
 import { FaEye } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Sử dụng useNavigate thay cho useHistory
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUsername } from '../../redux/slides/authActions';
 
@@ -26,21 +26,23 @@ const Login = () => {
             toast.error("Email/Password là bắt buộc");
             return;
         }
-        // Thực hiện đăng nhập và lấy username từ API
+    
         try {
             const res = await loginApi(email, password);
-
+    
             if (res.data && res.data.username) {
-                //Cập nhật state username
-                // const username = res.data.username;
-                // setUsername(res.data.username);
-                // console.log(username);
-                localStorage.setItem('token', res.data.token);
-                const username = res.data.username;
+                const { token, username } = res.data;
+    
+                // Lưu username và token vào localStorage
+                localStorage.setItem('token', token);
+                localStorage.setItem('username', username);
+    
+                // Cập nhật state username bằng Redux
                 dispatch(setUsername(username));
+    
                 // Điều hướng dựa trên roleId
                 if (res.data.roleId === 1) {
-                    navigate('/admin'); // Sử dụng navigate để chuyển hướng
+                    navigate('/admin');
                 } else if (res.data.roleId === 4) {
                     navigate('/');
                 } else if (res.data.roleId === 3) {
@@ -48,7 +50,7 @@ const Login = () => {
                 } else {
                     // Xử lý trường hợp khác
                 }
-
+    
                 toast.success("Đăng nhập thành công");
             } else {
                 if (res && res.status === 200) {
@@ -59,8 +61,6 @@ const Login = () => {
             console.error("Đăng nhập thất bại: ", error);
         }
     };
-
-
 
     return (
         <>
