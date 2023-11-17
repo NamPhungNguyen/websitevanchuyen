@@ -26,31 +26,31 @@ const Login = () => {
             toast.error("Email/Password là bắt buộc");
             return;
         }
-    
+
         try {
             const res = await loginApi(email, password);
-    
+
             if (res.data && res.data.username) {
                 const { token, username } = res.data;
-    
+
                 // Lưu username và token vào localStorage
                 localStorage.setItem('token', token);
                 localStorage.setItem('username', username);
-    
+
                 // Cập nhật state username bằng Redux
                 dispatch(setUsername(username));
-    
+
                 // Điều hướng dựa trên roleId
                 if (res.data.roleId === 1) {
                     navigate('/admin');
                 } else if (res.data.roleId === 4) {
-                    navigate('/');
+                    navigate('/userpage');
                 } else if (res.data.roleId === 3) {
                     navigate('/');
                 } else {
                     // Xử lý trường hợp khác
                 }
-    
+
                 toast.success("Đăng nhập thành công");
             } else {
                 if (res && res.status === 200) {
@@ -89,7 +89,7 @@ const Login = () => {
                     <IoIosArrowBack className="icon-back" /> <a className='btn-back' href='/'>Quay lại</a>
                 </div>
                 <div className='question-signup'>
-                    <p>Bạn chưa có tài khoản?<a href='/register' className='link-signup'> Đăng ký ngay</a> </p>
+                    <p>Bạn chưa có tài khoản?<a href='/register' className='link-signup'> Đăng ký ngay</a></p>
                 </div>
             </div>
         </>

@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-
 const checkTokenExpiration = (token) => {
     try {
         const decoded = jwt.verify(token, 'your-secret-key'); // Thay thế 'your-secret-key' bằng key bí mật của bạn
@@ -17,5 +16,4 @@ const checkTokenExpiration = (token) => {
         return false;
     }
 };
-
 export { checkTokenExpiration };

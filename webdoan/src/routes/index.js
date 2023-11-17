@@ -9,11 +9,8 @@ import Register from "../components/auth/Register";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import AdminLayout from '../components/auth_admin/AdminLayout'
 import ProductDetailsPage from "../pages/ProductDetailsPage/ProductDetailsPage";
-import ProductDetailsComponent from "../pages/ProductDetailsComponent/ProductDetailsComponent";
-import RegisterUser from "../components/auth/RegisterUser";
-import RegisterBusiness from "../components/auth/RegisterBussiness";
 import ProfilePage from "../pages/Profile/ProfilePage";
-
+import UserPage from "../pages/UserPage/UserPage.jsx";
  export const routes = [
     {
         path: '/',
@@ -44,39 +41,26 @@ import ProfilePage from "../pages/Profile/ProfilePage";
         page: Contact,
         isShowHeader: true
     },
-
     {
         path: '/login',
         page: Login,
         isShowHeader: false
     },
-
     {
         path: '/register',
         page: Register,
         isShowHeader: true
     },
-
-    {
-        path: '/register',
-        page: Register,
-        isShowHeader: true
-    },
-
     {
         path: '/driver-registration',
         page: RegisterDriver,
         isShowHeader: true
     },
-
-
     {
         path: '/admin',
         page: AdminLayout,
         isShowHeader: false
     },
-
-    
     {
         path: '/product-details',
         page: ProductDetailsPage,
@@ -88,13 +72,13 @@ import ProfilePage from "../pages/Profile/ProfilePage";
         page: ProfilePage,
         isShowHeader: true
     },
-    
-    
-
+    {
+        path: '/userpage',
+        page: UserPage,
+        isShowHeader: false
+    },
     {
         path: '*',
         page: NotFoundPage
     }
-    
-    
 ]

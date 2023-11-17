@@ -1,19 +1,18 @@
 import React from "react"
 import { Link } from 'react-router-dom';
-import ListOrderCard from "../order_item/ListOrderCard";
-import OrderCard from "../order_item/OrderCard";
 import { HiSearch } from 'react-icons/hi';
 import { BsPinMapFill } from 'react-icons/bs';
 import { BsBoxSeamFill } from 'react-icons/bs'
 import { FaTruck } from 'react-icons/fa'
 import { AiOutlineFieldTime } from 'react-icons/ai'
-import Footer from "../pages/Footer/Footer";
-import './home.scss'
-import CardComponent from "../components/CardComponent/CardComponent";
-import ButtonComponent from '../components/ButtonComponent/ButtonComponent'
-import { WrapperProducts } from "./style";
-import * as ProductService from '../services/ProductService'
+import Footer from "../Footer/Footer";
+import './userpage.scss'
+import CardComponent from "../../components/CardComponent/CardComponent";
+import ButtonComponent from '../../components/ButtonComponent/ButtonComponent'
+import { WrapperProducts } from "../../MenuNavbar/style";
+import * as ProductService from '../../services/ProductService'
 import { useQuery } from 'react-query'
+import HeaderUser from "../../pages/UserPage/HeaderUser"
 const Home = () => {
 
     const fetchProductAll = async () => {
@@ -24,7 +23,9 @@ const Home = () => {
     const { isLoading, data: products } = useQuery(['products'], fetchProductAll, { retry: 3, retryDelay: 1000 })
     console.log('data', products)
     return (
+
         <React.Fragment>
+            <div><HeaderUser/></div>
             <div className="home-header-banner">
                 <div className="content-up">
                     <div className="title1">Giao hàng tận nhà-Có mặt tận nơi</div>

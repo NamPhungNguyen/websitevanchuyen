@@ -6,8 +6,8 @@ import 'antd/dist/reset.css'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux';
 import rootReducer from './redux/slides/rootReducer.js'
-
-
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 // Khôi phục trạng thái từ localStorage
 const persistedState = localStorage.getItem('reduxState') 
   ? JSON.parse(localStorage.getItem('reduxState'))
@@ -24,10 +24,15 @@ const store = createStore(rootReducer, persistedState);
 store.subscribe(() => {
   localStorage.setItem('reduxState', JSON.stringify(store.getState()));
 });
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+      <ReactQueryDevtools /> {/* Include this line for development */}
+    </QueryClientProvider>
   </React.StrictMode>,
-)
+);

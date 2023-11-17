@@ -3,7 +3,8 @@ import { Card } from 'antd';
 import Meta from 'antd/es/card/Meta';
 import { StyleNameProduct, WrapperCardStyle, WrapperDiscountText, WrapperPriceText, WrapperReporText } from './style';
 import { StarFilled } from '@ant-design/icons'
-const CardComponent = () => {
+const CardComponent = (props) => {
+    const {customerId, orderedDate,arrivedDate} = props
     return (
         <WrapperCardStyle
             hoverable
@@ -14,16 +15,16 @@ const CardComponent = () => {
             bodyStyle={{ padding: '10px' }}
             cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
         >
-            <StyleNameProduct>Tên hàng hóa</StyleNameProduct>
+            <StyleNameProduct>{customerId}</StyleNameProduct>
             <WrapperReporText>
                 <span style={{marginRight:'4px'}}>
                     <span>4.96 </span> <StarFilled style={{ fontSize: '12px', color: 'yellow' }} />
                 </span>
                 <span>| Đang chờ</span>
             </WrapperReporText>
-            <WrapperPriceText>19.000.000 đ 
+            <WrapperPriceText>{orderedDate}
                 <WrapperDiscountText>
-                    -5%
+                    {arrivedDate}
                 </WrapperDiscountText>
             </WrapperPriceText>
 
